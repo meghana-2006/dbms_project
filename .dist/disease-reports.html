@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Symptom Helper</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="disease.css">
+</head>
+
+<body>
+    <header style="background-color: #388E3C; color: white; padding: 1rem; font-family: 'Poppins', sans-serif; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 1.5rem; font-weight: 600;">🌿 Plant Symptom Helper</div>
+        <nav>
+            <a href="#cropName" style="color: white; margin-right: 15px; text-decoration: none;">Check Symptoms</a>
+            <a href="#suggestions" style="color: white; margin-right: 15px; text-decoration: none;">Suggestions</a>
+            <a href="#experts" style="color: white; text-decoration: none;">Consult Experts</a>
+        </nav>
+    </header>
+
+<div id="languageSelect" style="text-align: right; padding: 10px;"></div>
+
+<div class="container">
+    <h1>🌱 Plant Symptom Helper</h1>
+
+    <input type="text" id="cropName" placeholder="Enter Crop Name">
+
+    <select id="symptomSelect">
+        <option value="">-- Select Symptom --</option>
+        <option value="Yellow Leaves">Yellow Leaves</option>
+        <option value="Brown Spots">Brown Spots</option>
+        <option value="Wilting">Wilting</option>
+        <option value="Stunted Growth">Stunted Growth</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <div id="otherSymptomDiv" style="display:none;">
+        <input type="text" id="otherSymptom" placeholder="Describe other symptom...">
+    </div>
+
+    <button id="voiceInputBtn">🎤 Speak Symptom</button>
+
+    <label for="imageUpload" style="margin-top: 10px;">Upload Crop Image:</label>
+    <input type="file" id="imageUpload" accept="image/*">
+
+    <button onclick="getSuggestions()">Get Suggestions</button>
+
+    <div id="imagePreview" style="display:none;"></div>
+    <div id="suggestions" style="display:none;"></div>
+    <div id="experts" style="display:none;"></div>
+    <div id="pesticideBuy" style="display:none;"></div>
+    <div id="pushNotification" style="display:none;"></div>
+    <div id="expiryNotification" style="display:none;"></div>
+</div>
+
+<script src="diseaes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>E-Krishi</title>
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    /* Inline styling for navbar (move to style1.css ideally) */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #2d6a4f;
+      color: white;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      color: #ffd166;
+    }
+
+    header {
+      text-align: center;
+      background-color: #4CAF50;
+      padding: 1.5rem 0;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4CAF50;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">E-Krishi</div>
+    <div class="nav-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+      <a href="account.html">Your Account</a>
+      <a href="logout.html">Logout</a>
+
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>E-Krishi Smart Dashboard</h1>
+    <p>Manage your farm data, predictions, and market insights.</p>
+  </header>
+
+  <!-- Main Dashboard -->
+  <main class="card-container">
+    <div class="card" onclick="navigate('Market-prices')">
+      <img src="market-price.webp" alt="Market Prices">
+      <h2>Market Prices</h2>
+    </div>
+
+    <div class="card" onclick="navigate('crop-recommendations')">
+      <img src="https://img.icons8.com/color/96/000000/wheat.png" alt="Crop Recommendations">
+      <h2>Crop Recommendations</h2>
+    </div>
+
+    <div class="card" onclick="navigate('disease-reports')">
+      <img src="disease.jpg" alt="Disease Reports">
+      <h2>Disease Reports</h2>
+    </div>
+
+    <div class="card" onclick="navigate('yield-predictions')">
+      <img src="yield.webp" alt="Yield Predictions">
+      <h2>Yield Predictions</h2>
+    </div>
+
+    <div class="card" onclick="navigate('Drone-Rentals')">
+      <img src="drone.jpg" alt="Drone Rentals">
+      <h2>Drone Rentals</h2>
+    </div>
+
+    <div class="card" onclick="navigate('retailer-orders')">
+      <img src="https://img.icons8.com/color/96/000000/shopping-cart.png" alt="Retailer Orders">
+      <h2>Retailer Orders</h2>
+    </div>
+
+    <div class="card" onclick="navigate('Manure-Supply')">
+      <img src="manure.webp" alt="Manure Supply">
+      <h2>Manure Supply</h2>
+    </div>
+
+    <div class="card" onclick="navigate('Loans-and-Subsidies')">
+      <img src="loans_subsicidies.jpg" alt="Loans and Subsidies">
+      <h2>Loans and Subsidies</h2>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 E-Krishi. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:support@ekrishi.com">support@ekrishi.com</a></p>
+  </footer>
+
+  <!-- Google Translate Initialization -->
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+
+    function navigate(page) {
+      window.location.href = page + '.html';
+    }
+  </script>
+  <script src="app.js"></script>
+  <script>
+  function logout() {
+    // Clear user session data if stored
+    localStorage.clear(); 
+    alert("You have been logged out.");
+    window.location.href = "login.html"; // Redirect to login
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farmer Loan & Subsidy Portal</title>
+  <link rel="stylesheet" href="loans.css" />
+</head>
+<body>
+  <header>
+    <h1>Farmer Loan & Subsidy Portal</h1>
+  </header>
+
+  <main>
+    <div id="loan-list"></div>
+
+    <div id="detail-view" class="hidden">
+      <button id="back-btn">← Back to List</button>
+      <h2 id="detail-title"></h2>
+      <img id="detail-image" alt="Scheme Image" />
+      <p id="detail-description"></p>
+      <p><strong>Eligibility:</strong> <span id="detail-eligibility"></span></p>
+      <p><strong>Documents Required:</strong> <span id="detail-documents"></span></p>
+      <button id="apply-btn">Apply for this Scheme</button>
+    </div>
+
+    <div id="apply-form-container" class="hidden">
+      <h3>Application Form</h3>
+      <form id="applicationForm">
+        <input type="hidden" id="selectedScheme" />
+
+        <label for="farmerName">Farmer Name:</label>
+        <input type="text" id="farmerName" required />
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" pattern="\d{10}" required />
+
+        <label for="aadhar">Aadhar Number:</label>
+        <input type="text" id="aadhar" pattern="\d{12}" required />
+
+        <label for="state">State:</label>
+        <input type="text" id="state" required />
+
+        <label for="landSize">Land Size (in acres):</label>
+        <input type="number" id="landSize" required />
+
+        <label for="cropType">Crop Type:</label>
+        <input type="text" id="cropType" required />
+
+        <label for="loanPurpose">Loan Purpose:</label>
+        <input type="text" id="loanPurpose" required />
+
+        <label for="amount">Amount Required (₹):</label>
+        <input type="number" id="amount" required />
+
+        <button type="submit">Submit Application</button>
+      </form>
+      <div id="confirmation"></div>
+    </div>
+  </main>
+
+  <script src="loans.js"></script>
+</body>
+</html>

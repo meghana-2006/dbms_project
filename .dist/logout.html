@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="4;url=login.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logged Out</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #a8dadc, #f1faee);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 50px 60px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      animation: fadeBounce 1s ease;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px auto;
+      border-radius: 50%;
+      background: #2d6a4f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popIn 0.8s ease forwards;
+    }
+
+    .checkmark svg {
+      width: 40px;
+      height: 40px;
+      stroke: #fff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: drawCheck 0.5s 0.5s ease-out forwards;
+    }
+
+    h2 {
+      color: #2d6a4f;
+      margin-bottom: 10px;
+      font-size: 26px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeBounce {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes drawCheck {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="checkmark">
+      <svg viewBox="0 0 52 52">
+        <path d="M14 27l7 7 17-17" />
+      </svg>
+    </div>
+    <h2>You have been logged out</h2>
+    <p>Redirecting to login page...</p>
+  </div>
+
+  <script>
+    localStorage.clear();
+    sessionStorage.clear();
+  </script>
+
+</body>
+</html>

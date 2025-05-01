@@ -1,0 +1,63 @@
+body {
+    background:  white;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1498654202164-9d1563a278b6');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: rgba(255,255,255,0.9);
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 700px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+select, input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #2e7d32;
+}
+
+#voiceInputBtn {
+    background-color: #4caf50;
+    color: white;
+    margin-top: 10px;
+}
+
+#suggestions, #experts, #pesticideBuy, #pushNotification, #expiryNotification, #imagePreview {
+    margin-top: 20px;
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+a {
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#imagePreview img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}

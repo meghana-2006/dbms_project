@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farm to Retail - Direct Buy</title>
+  <link rel="stylesheet" href="retailers.css" />
+</head>
+<body>
+  <header>
+    <h1>Buy Direct from Farmers</h1>
+  </header>
+
+  <section class="filters">
+    <label>Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="all">All</option>
+      <option value="Fruits">Fruits</option>
+      <option value="Vegetables">Vegetables</option>
+      <option value="Cereals">Cereals</option>
+    </select>
+  </section>
+
+  <main>
+    <div id="product-list" class="product-grid"></div>
+
+    <div id="cart">
+      <h2>🛒 Cart</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+      <button id="checkout-btn">Checkout</button>
+      <div id="confirmation" class="hidden">✅ Order placed successfully!</div>
+    </div>
+  </main>
+
+  <script src="retailers.js"></script>
+</body>
+</html>

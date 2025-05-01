@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - E-Krishi</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url(login-image1.jpg);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #2d6a4f;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #40916c;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Success Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      background: #2d6a4f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      animation: popIn 0.5s ease;
+    }
+
+    .checkmark svg {
+      width: 40px;
+      height: 40px;
+      stroke: #fff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: drawCheck 0.6s 0.5s ease forwards;
+    }
+
+    .overlay h3 {
+      color: #2d6a4f;
+      font-size: 22px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Login to E-Krishi</h2>
+
+    <select id="userRole" required>
+      <option value="">-- Select Role --</option>
+      <option value="farmer">Farmer</option>
+      <option value="retailer">Retailer</option>
+    </select>
+
+    <input type="text" id="userId" placeholder="User ID" required />
+    <input type="password" id="password" placeholder="Password" required />
+
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Success Overlay -->
+  <div class="overlay" id="successOverlay">
+    <div class="checkmark">
+      <svg viewBox="0 0 52 52">
+        <path d="M14 27l7 7 17-17" />
+      </svg>
+    </div>
+    <h3>Login Successful!</h3>
+  </div>
+
+  <script>
+    function login() {
+      const role = document.getElementById("userRole").value;
+      const userId = document.getElementById("userId").value;
+      const password = document.getElementById("password").value;
+
+      if (!role || !userId || !password) {
+        alert("Please fill all fields and select a role.");
+        return;
+      }
+
+      // Show animation overlay
+      const overlay = document.getElementById("successOverlay");
+      overlay.classList.add("active");
+
+      // Simulate a delay before redirect
+      setTimeout(() => {
+        if (role === "farmer") {
+          window.location.href = "home.html";
+        } else if (role === "retailer") {
+          window.location.href = "home.html";
+        }
+      }, 2500); // 2.5 seconds delay
+    }
+    localStorage.setItem("userRole", role); // Already exists in your login function
+    localStorage.setItem("userRole", role);
+
+if (role === "farmer") {
+  window.location.href = "home.html";
+} else if (role === "retailer") {
+  window.location.href = "home.html";
+}
+
+  </script>
+  <script>
+    function selectRole(role) {
+      localStorage.setItem("userRole", role);
+      window.location.href = "account.html";
+    }
+  </script>
+  <!-- localStorage.setItem("userRole", role); // Already exists in your login function -->
+
+
+</body>
+</html>

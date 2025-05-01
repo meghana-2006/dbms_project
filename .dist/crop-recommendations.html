@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroTwin - Smart Farmer Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="croprecm.css">
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+  <header style="background-color: #4CAF50; padding: 1rem; color: white; font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: space-between;">
+    <div style="font-size: 1.5rem; font-weight: 600;">
+      🌾 crop Recommendation Dashboard
+    </div>
+    <nav>
+      <a href="#farmerFriendlyForm" style="color: white; margin-right: 15px; text-decoration: none;">Crop Form</a>
+      <a href="#resultSection" style="color: white; margin-right: 15px; text-decoration: none;">Recommendation</a>
+      <a href="#weather-disease" style="color: white; margin-right: 15px; text-decoration: none;">Disease Risk</a>
+      <a href="#experts" style="color: white; text-decoration: none;">Ask Experts</a>
+    </nav>
+  </header>
+
+
+
+<section class="form-section">
+  <h2>Crop Recommendation</h2>
+  <form id="farmerFriendlyForm">
+
+    <label for="soil_color">Soil Color:</label>
+    <select id="soil_color" required onchange="checkOther(this, 'soil_other')">
+      <option value="">Select</option>
+      <option value="black">Black</option>
+      <option value="red">Red</option>
+      <option value="brown">Brown</option>
+      <option value="sandy">Sandy</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="text" id="soil_other" placeholder="Enter Soil Color" style="display:none;">
+
+    <label for="water_behavior">Water Behavior After Rain:</label>
+    <select id="water_behavior" required onchange="checkOther(this, 'water_other')">
+      <option value="">Select</option>
+      <option value="absorbs">Absorbs quickly</option>
+      <option value="stays">Stays wet for long</option>
+      <option value="runs_off">Runs off easily</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="text" id="water_other" placeholder="Describe Water Behavior" style="display:none;">
+
+    <label for="last_crop">Previously Grown Crop:</label>
+    <select id="last_crop" required onchange="checkOther(this, 'crop_other')">
+      <option value="">Select</option>
+      <option value="rice">Rice</option>
+      <option value="wheat">Wheat</option>
+      <option value="cotton">Cotton</option>
+      <option value="vegetables">Vegetables</option>
+      <option value="sugarcane">Sugarcane</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="text" id="crop_other" placeholder="Enter Crop Name" style="display:none;">
+
+    <label for="rainfall">Recent Rainfall:</label>
+    <select id="rainfall" required>
+      <option value="">Select</option>
+      <option value="heavy">Heavy</option>
+      <option value="moderate">Moderate</option>
+      <option value="low">Low</option>
+    </select>
+
+    <label for="temperature">Temperature Now:</label>
+    <select id="temperature" required>
+      <option value="">Select</option>
+      <option value="hot">Hot</option>
+      <option value="warm">Warm</option>
+      <option value="cool">Cool</option>
+    </select>
+
+    <label for="soilImage">Upload Soil Image:</label>
+    <input type="file" id="soilImage" accept="image/*">
+
+    <button type="submit">Get Crop Recommendation</button>
+  </form>
+</section>
+
+<section id="resultSection" style="display:none;">
+  <h2>🌱 Recommended Crops</h2>
+  <p id="manualRecommendation"></p>
+  <pre id="aiRecommendation"></pre>
+</section>
+
+<section id="speak-output">
+  <h2>Speak Recommendation (Voice Output)</h2>
+  <textarea id="speak-text" placeholder="Type text to speak"></textarea>
+  <button onclick="speakText()">🔊 Speak</button>
+</section>
+
+<section id="weather-disease">
+  <h2>Weather-Based Disease Prediction</h2>
+  <button onclick="predictDisease()">Check Disease Risk</button>
+  <p id="disease-result"></p>
+</section>
+
+<section id="experts">
+  <h2>Consult Experienced Farmers 👩‍🌾👨‍🌾</h2>
+  <textarea id="consult-text" placeholder="Write your question..."></textarea>
+  <button onclick="submitConsult()">Send Question</button>
+  <p id="consult-response"></p>
+</section>
+
+<section id="voice-input">
+  <h2>Voice Input (Auto Listening)</h2>
+  <p id="voice-result">Listening...</p>
+</section>
+
+<div id="languageSelect"></div>
+
+<script src="croprecm.js"></script>
+
+</body>
+</html>

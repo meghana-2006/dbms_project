@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .account-container {
+    width: 85%;
+    max-width: 850px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #388e3c;
+    margin-bottom: 30px;
+    font-size: 36px;
+  }
+  
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-upload {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .image-upload input {
+    display: none;
+  }
+  
+  .image-upload img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #388e3c;
+    cursor: pointer;
+  }
+  
+  .details {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 18px;
+  }
+  
+  .details input {
+    padding: 12px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1b5e20;
+  }
+  
+  .hidden {
+    display: none;
+  }

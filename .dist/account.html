@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Profile</title>
+  <link rel="stylesheet" href="account.css" />
+</head>
+<body>
+  <div class="account-container">
+    <h1>👨‍🌾 My Farmer Profile</h1>
+
+    <div class="profile-section">
+      <div class="image-upload">
+        <label for="profilePic">
+          <img id="profileImage" src="profile.webp" alt="Profile" /> 
+        </label>
+        <input type="file" id="profilePic" accept="image/*" />
+      </div>
+
+      <div class="details">
+        <input type="text" id="farmerName" value="Ramesh Kumar" disabled />
+        <input type="text" id="mobile" value="+91 9876543210" disabled />
+        <input type="text" id="aadhar" value="XXXX-XXXX-1234" disabled />
+        <input type="text" id="village" value="Rampur, UP" disabled />
+        <input type="text" id="land" value="3 Acres" disabled />
+        <input type="text" id="crop" value="Wheat" disabled />
+
+        <button id="editBtn">✏ Edit</button>
+        <button id="saveBtn" class="hidden">💾 Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="account.js"></script>
+</body>
+</html>

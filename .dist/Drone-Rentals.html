@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroTwin - Drone Order Portal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="drone.css">
+</head>
+
+<body>
+
+<header>
+  <h1>E-Krishi - Drone Marketplace </h1>
+  <p>Choose the perfect drone for your farming needs 🌾</p>
+</header>
+
+<section id="drones">
+  <h2>Available Drones</h2>
+  <div class="drone-container">
+
+    <!-- Drone 1 -->
+    <div class="drone-card">
+      <img src="agrodrone.jpg" alt="AgriDrone X1">
+      <h3>AgroDrone X1</h3>
+      <ul>
+        <li>Battery: 1 Hour Backup</li>
+        <li>Spray Range: 8 meters</li>
+        <li>Weight Capacity: 15kg</li>
+      </ul>
+      <p>🌾 5 Acres/hour | 💰 ₹500/hour</p>
+      <input type="number" id="acres-x1" placeholder="Enter Acres">
+      <button onclick="calculateHoursAndCost('x1', 'AgriDrone X1', 5, 500)">Estimate</button>
+      <p id="hours-x1"></p>
+      <p id="cost-x1"></p>
+      <button id="orderBtn-x1" onclick="showOrderForm('AgriDrone X1', 'cost-x1')" style="display:none;">Order Now</button>
+    </div>
+
+    <!-- Drone 2 -->
+    <div class="drone-card">
+      <img src="cropflyer.jpg" alt="CropFlyer Pro">
+      <h3>CropFlyer Pro</h3>
+      <ul>
+        <li>Battery: 1.5 Hours Backup</li>
+        <li>Spray Range: 10 meters</li>
+        <li>Weight Capacity: 20kg</li>
+      </ul>
+      <p>🌾 8 Acres/hour | 💰 ₹600/hour</p>
+      <input type="number" id="acres-pro" placeholder="Enter Acres">
+      <button onclick="calculateHoursAndCost('pro', 'CropFlyer Pro', 8, 600)">Estimate</button>
+      <p id="hours-pro"></p>
+      <p id="cost-pro"></p>
+      <button id="orderBtn-pro" onclick="showOrderForm('CropFlyer Pro', 'cost-pro')" style="display:none;">Order Now</button>
+    </div>
+
+    <!-- Drone 3 -->
+    <div class="drone-card">
+      <img src="greenhover.jpg" alt="GreenHover Max">
+      <h3>GreenHover Max</h3>
+      <ul>
+        <li>Battery: 2 Hours Backup</li>
+        <li>Spray Range: 12 meters</li>
+        <li>Weight Capacity: 25kg</li>
+      </ul>
+      <p>🌾 10 Acres/hour | 💰 ₹700/hour</p>
+      <input type="number" id="acres-max" placeholder="Enter Acres">
+      <button onclick="calculateHoursAndCost('max', 'GreenHover Max', 10, 700)">Estimate</button>
+      <p id="hours-max"></p>
+      <p id="cost-max"></p>
+      <button id="orderBtn-max" onclick="showOrderForm('GreenHover Max', 'cost-max')" style="display:none;">Order Now</button>
+    </div>
+
+    <!-- Drone 4 -->
+    <div class="drone-card">
+      <img src="skysprayer.jpg" alt="SkySprayer Ultra">
+      <h3>SkySprayer Ultra</h3>
+      <ul>
+        <li>Battery: 2.5 Hours Backup</li>
+        <li>Spray Range: 14 meters</li>
+        <li>Weight Capacity: 30kg</li>
+      </ul>
+      <p>🌾 12 Acres/hour | 💰 ₹800/hour</p>
+      <input type="number" id="acres-ultra" placeholder="Enter Acres">
+      <button onclick="calculateHoursAndCost('ultra', 'SkySprayer Ultra', 12, 800)">Estimate</button>
+      <p id="hours-ultra"></p>
+      <p id="cost-ultra"></p>
+      <button id="orderBtn-ultra" onclick="showOrderForm('SkySprayer Ultra', 'cost-ultra')" style="display:none;">Order Now</button>
+    </div>
+
+    <!-- Drone 5 -->
+    <div class="drone-card">
+      <img src="fieldeagle.jpg" alt="FieldEagle Supreme">
+      <h3>FieldEagle Supreme</h3>
+      <ul>
+        <li>Battery: 3 Hours Backup</li>
+        <li>Spray Range: 16 meters</li>
+        <li>Weight Capacity: 35kg</li>
+      </ul>
+      <p>🌾 15 Acres/hour | 💰 ₹1000/hour</p>
+      <input type="number" id="acres-supreme" placeholder="Enter Acres">
+      <button onclick="calculateHoursAndCost('supreme', 'FieldEagle Supreme', 15, 1000)">Estimate</button>
+      <p id="hours-supreme"></p>
+      <p id="cost-supreme"></p>
+      <button id="orderBtn-supreme" onclick="showOrderForm('FieldEagle Supreme', 'cost-supreme')" style="display:none;">Order Now</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Order Form Section -->
+<section id="orderSection" style="display:none;">
+  <h2>📦 Order Your Drone</h2>
+  <form id="orderForm">
+    <p id="selectedDrone"></p>
+    <p id="selectedCost"></p>
+    
+    <input type="text" id="farmerName" placeholder="Your Name" required>
+    <input type="text" id="farmerPhone" placeholder="Phone Number" required>
+    <textarea id="farmerAddress" placeholder="Address" required></textarea>
+    
+    <button type="submit">Place Order</button>
+  </form>
+  <p id="orderConfirmation"></p>
+</section>
+
+<script src="drone.js"></script>
+
+</body>
+</html>
