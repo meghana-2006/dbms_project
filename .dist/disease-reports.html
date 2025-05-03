@@ -1,59 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Plant Symptom Helper</title>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="disease.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disease Report Submission</title>
+  <link rel="stylesheet" href="disease.css" />
 </head>
-
 <body>
-    <header style="background-color: #388E3C; color: white; padding: 1rem; font-family: 'Poppins', sans-serif; display: flex; justify-content: space-between; align-items: center;">
-        <div style="font-size: 1.5rem; font-weight: 600;">🌿 Plant Symptom Helper</div>
-        <nav>
-            <a href="#cropName" style="color: white; margin-right: 15px; text-decoration: none;">Check Symptoms</a>
-            <a href="#suggestions" style="color: white; margin-right: 15px; text-decoration: none;">Suggestions</a>
-            <a href="#experts" style="color: white; text-decoration: none;">Consult Experts</a>
-        </nav>
-    </header>
+  <div class="form-container">
+    <h2>Disease Report</h2>
+    <form id="diseaseForm" enctype="multipart/form-data">
+      <label for="cropname">Crop Name:</label>
+      <input type="text" id="cropname" name="cropname" required />
 
-<div id="languageSelect" style="text-align: right; padding: 10px;"></div>
+      <label for="symptom">Symptom:</label>
+      <input type="text" id="symptom" name="symptom" required />
 
-<div class="container">
-    <h1>🌱 Plant Symptom Helper</h1>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required />
 
-    <input type="text" id="cropName" placeholder="Enter Crop Name">
+      <label for="season">Season:</label>
+      <select id="season" name="season" required>
+        <option value="">– Select –</option>
+        <option value="kharif">Kharif</option>
+        <option value="rabi">Rabi</option>
+        <option value="summer">Summer</option>
+        <option value="monsoon">Monsoon</option>
+      </select>
 
-    <select id="symptomSelect">
-        <option value="">-- Select Symptom --</option>
-        <option value="Yellow Leaves">Yellow Leaves</option>
-        <option value="Brown Spots">Brown Spots</option>
-        <option value="Wilting">Wilting</option>
-        <option value="Stunted Growth">Stunted Growth</option>
-        <option value="Other">Other</option>
-    </select>
+      <label for="temperature">Temperature (°C):</label>
+      <input type="number" id="temperature" name="temperature" required />
 
-    <div id="otherSymptomDiv" style="display:none;">
-        <input type="text" id="otherSymptom" placeholder="Describe other symptom...">
-    </div>
+      <label for="humidity">Humidity (%):</label>
+      <input type="number" id="humidity" name="humidity" required />
 
-    <button id="voiceInputBtn">🎤 Speak Symptom</button>
+      <!-- <label for="symptom_image">Symptom Image:</label>
+      <input type="file" id="symptom_image" name="symptom_image" accept="image/*" required /> -->
 
-    <label for="imageUpload" style="margin-top: 10px;">Upload Crop Image:</label>
-    <input type="file" id="imageUpload" accept="image/*">
+      <button type="submit">Submit Report</button>
+    </form>
 
-    <button onclick="getSuggestions()">Get Suggestions</button>
+    <div id="result" class="result"></div>
+  </div>
 
-    <div id="imagePreview" style="display:none;"></div>
-    <div id="suggestions" style="display:none;"></div>
-    <div id="experts" style="display:none;"></div>
-    <div id="pesticideBuy" style="display:none;"></div>
-    <div id="pushNotification" style="display:none;"></div>
-    <div id="expiryNotification" style="display:none;"></div>
-</div>
-
-<script src="diseaes.js"></script>
-
+  <script src="disease.js"></script>
 </body>
 </html>

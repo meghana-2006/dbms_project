@@ -1,0 +1,152 @@
+[
+    {
+      "cropname": "rice",
+      "symptom": "yellowing leaves with brown tips",
+      "location": "Andhra Pradesh",
+      "season": "kharif",
+      "temperature": 30,
+      "humidity": 85,
+      "disease_name": "Bacterial Leaf Blight",
+      "recommended_pesticide": "Streptocycline"
+    },
+    {
+      "cropname": "wheat",
+      "symptom": "white powdery patches on leaves",
+      "location": "Punjab",
+      "season": "rabi",
+      "temperature": 20,
+      "humidity": 60,
+      "disease_name": "Powdery Mildew",
+      "recommended_pesticide": "Sulfur Dust"
+    },
+    {
+      "cropname": "cotton",
+      "symptom": "black spots on leaves and bolls",
+      "location": "Maharashtra",
+      "season": "kharif",
+      "temperature": 32,
+      "humidity": 75,
+      "disease_name": "Leaf Spot",
+      "recommended_pesticide": "Copper O"
+    },
+    {
+      "cropname": "groundnut",
+      "symptom": "wilting and root rot",
+      "location": "Tamil Nadu",
+      "season": "summer",
+      "temperature": 34,
+      "humidity": 65,
+      "disease_name": "Root Rot",
+      "recommended_pesticide": "Carbendazim"
+    },
+    {
+      "cropname": "maize",
+      "symptom": "brown streaks on leaves",
+      "location": "Karnataka",
+      "season": "kharif",
+      "temperature": 31,
+      "humidity": 70,
+      "disease_name": "Leaf Blight",
+      "recommended_pesticide": "Mancozeb"
+    },
+    {
+      "cropname": "sugarcane",
+      "symptom": "reddish lesions on leaves",
+      "location": "Uttar Pradesh",
+      "season": "summer",
+      "temperature": 36,
+      "humidity": 80,
+      "disease_name": "Red Rot",
+      "recommended_pesticide": "Bordeaux Mixture"
+    },
+    {
+      "cropname": "banana",
+      "symptom": "yellowing and wilting of older leaves",
+      "location": "Kerala",
+      "season": "monsoon",
+      "temperature": 28,
+      "humidity": 90,
+      "disease_name": "Panama Wilt",
+      "recommended_pesticide": "Carbendazim"
+    },
+    {
+      "cropname": "tomato",
+      "symptom": "leaf curling and stunted growth",
+      "location": "Telangana",
+      "season": "rabi",
+      "temperature": 25,
+      "humidity": 60,
+      "disease_name": "Leaf Curl Virus",
+      "recommended_pesticide": "Imidacloprid"
+    },
+    {
+      "cropname": "chili",
+      "symptom": "dark lesions on stems and fruits",
+      "location": "Madhya Pradesh",
+      "season": "kharif",
+      "temperature": 29,
+      "humidity": 68,
+      "disease_name": "Anthracnose",
+      "recommended_pesticide": "Azoxystrobin"
+    },
+    {
+      "cropname": "onion",
+      "symptom": "water-soaked lesions at leaf tips",
+      "location": "Gujarat",
+      "season": "rabi",
+      "temperature": 26,
+      "humidity": 62,
+      "disease_name": "Downy Mildew",
+      "recommended_pesticide": "Metalaxyl"
+    },
+    {
+      "cropname": "potato",
+      "symptom": "brown blight on leaves and stems",
+      "location": "Himachal Pradesh",
+      "season": "rabi",
+      "temperature": 18,
+      "humidity": 85,
+      "disease_name": "Late Blight",
+      "recommended_pesticide": "Chlorothalonil"
+    },
+    {
+      "cropname": "soybean",
+      "symptom": "irregular brown patches on leaves",
+      "location": "Maharashtra",
+      "season": "kharif",
+      "temperature": 30,
+      "humidity": 72,
+      "disease_name": "Soybean Rust",
+      "recommended_pesticide": "Hexaconazole"
+    },
+    {
+      "cropname": "mustard",
+      "symptom": "small white spots on lower leaves",
+      "location": "Haryana",
+      "season": "rabi",
+      "temperature": 22,
+      "humidity": 55,
+      "disease_name": "White Rust",
+      "recommended_pesticide": "Mancozeb"
+    },
+    {
+      "cropname": "pearl millet",
+      "symptom": "blackened grains and earhead mold",
+      "location": "Rajasthan",
+      "season": "kharif",
+      "temperature": 35,
+      "humidity": 40,
+      "disease_name": "Grain Smut",
+      "recommended_pesticide": "Carbendazim"
+    },
+    {
+      "cropname": "pigeon pea",
+      "symptom": "stem canker and wilting",
+      "location": "Chhattisgarh",
+      "season": "kharif",
+      "temperature": 33,
+      "humidity": 66,
+      "disease_name": "Fusarium Wilt",
+      "recommended_pesticide": "Thiophanate-methyl"
+    }
+  ]

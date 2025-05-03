@@ -6,6 +6,5 @@ const Section = ({ id, title, description }) => (
       </div>
     </div>
   );
-  
   export default Section;
   
