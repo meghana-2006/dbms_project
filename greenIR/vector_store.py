@@ -1,5 +1,5 @@
 import os
-import pickle
+import json
 from pathlib import Path
 from typing import List, Dict, Optional
 import numpy as np
@@ -11,8 +11,8 @@ class VectorStore:
         self.data_dir.mkdir(exist_ok=True)
         
         self.index_path = self.data_dir / "faiss_index.bin"
-        self.metadata_path = self.data_dir / "metadata.pkl"
-        self.documents_path = self.data_dir / "documents.pkl"
+        self.metadata_path = self.data_dir / "metadatas.json"
+        self.documents_path = self.data_dir / "documents.json"
         
         self.index: Optional[faiss.IndexFlatL2] = None
         self.documents: List[str] = []
@@ -75,12 +75,12 @@ class VectorStore:
             # Save FAISS index
             faiss.write_index(self.index, str(self.index_path))
             
-            # Save documents and metadata
-            with open(self.documents_path, 'wb') as f:
-                pickle.dump(self.documents, f)
+            # Save documents and metadata as JSON
+            with open(self.documents_path, 'w', encoding='utf-8') as f:
+                json.dump(self.documents, f, indent=2, ensure_ascii=False)
             
-            with open(self.metadata_path, 'wb') as f:
-                pickle.dump(self.metadata, f)
+            with open(self.metadata_path, 'w', encoding='utf-8') as f:
+                json.dump(self.metadata, f, indent=2, ensure_ascii=False)
             
             print(f"Vector store saved: {self.index.ntotal} vectors")
         else:
@@ -97,12 +97,12 @@ class VectorStore:
             self.index = faiss.read_index(str(self.index_path))
             self.dimension = self.index.d
             
-            # Load documents and metadata
-            with open(self.documents_path, 'rb') as f:
-                self.documents = pickle.load(f)
+            # Load documents and metadata from JSON
+            with open(self.documents_path, 'r', encoding='utf-8') as f:
+                self.documents = json.load(f)
             
-            with open(self.metadata_path, 'rb') as f:
-                self.metadata = pickle.load(f)
+            with open(self.metadata_path, 'r', encoding='utf-8') as f:
+                self.metadata = json.load(f)
             
             print(f"Vector store loaded: {self.index.ntotal} vectors")
         except Exception as e:
