@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+streamlit
+groq
+faiss-cpu
+PyPDF2
+python-multipart
+pydantic
+tqdm
+requests
